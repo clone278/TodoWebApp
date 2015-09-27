@@ -4,7 +4,7 @@
 # These are project build parameters in TeamCity
 # Depending on the branch, we will use different major/minor versions
 
-$majorMinorVersionMain = "%system.MajorMinorVersion.Main%"
+$majorMinorVersionMaster = "%system.MajorMinorVersion.Master%"
 $majorMinorVersionDevelop = "%system.MajorMinorVersion.Develop%"
 
 # TeamCity's auto-incrementing build counter; ensures each build is unique
@@ -22,9 +22,9 @@ if ($branch.Contains("/"))
 
 Write-Host "Branch: $branch"
 
-if ($branch -eq "main") 
+if ($branch -eq "master") 
 {
- $buildNumber = "${majorMinorVersionMain}.${buildCounter}"
+ $buildNumber = "${majorMinorVersionMaster}.${buildCounter}"
 }
 elseif ($branch -eq "develop") 
 {
